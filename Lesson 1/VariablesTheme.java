@@ -126,6 +126,6 @@ public class VariablesTheme {
         int sec1 = sec % 60;
         System.out.println(sec + " секунд, это:");
         System.out.println(hour + ":" + min + ":" + sec1);
-        }
+    }
     
 }
