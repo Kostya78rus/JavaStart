@@ -2,12 +2,12 @@ public class VariablesTheme {
     public static void main(String[] args) {
         System.out.println("Задача 1. Создание переменных и вывод их значений на консоль.\n");
         byte core = 4;
-        short mhz= 2100;
+        short mhz = 2100;
         int ram = 8192;
         long ssd = 524288;
         float mhzMax = 3.7f;
-        double prosto = 9.9876543210d;
-        char sym = 'Y';
+        double numberPi = 3,1415926535d;
+        char oneNumberSimbol = 'Y';
         boolean yes = true;
         System.out.println("Количество ядер процессора: " + core);
         System.out.println("Базовая частота процессора: " + mhz + " MHz");
@@ -23,9 +23,9 @@ public class VariablesTheme {
         int costBook = 200;
         int discount = 11;
         int sumDiscount = (costPen + costBook) * discount / 100;
-        int curchase = costBook + costPen - sumDiscount;
+        int discountPrice = costBook + costPen - sumDiscount;
         System.out.println("Ваша скидка составила: " + sumDiscount);
-        System.out.println("Общая сумма товаров, учитывая скидку: " + curchase);
+        System.out.println("Общая сумма товаров, учитывая скидку: " + discountPrice);
 
         System.out.println("\nЗадача 3. Вывод на консоль слова JAVA.\n");
         System.out.println("   J    a  v     v  a");
@@ -73,31 +73,26 @@ public class VariablesTheme {
         System.out.println("Новые значения переменных: " + a + " " + b);
 
         System.out.println("\nЗадача 6. Вывод символов и их кодов.\n");
-        char symbNumber = '#';
-        char symbAnd = '&';
-        char symbSobaka = '@';
-        char symbCaret = '^';
-        char symbUnderscore = '_';
-        int decNumber = (int) symbNumber;
-        int decAnd = (int) (symbAnd);
-        int decSobaka = (int) (symbSobaka);
-        int decCaret = (int) (symbCaret);
-        int decUnderscore = (int) (symbUnderscore);
-        System.out.println("Код символа: " + decNumber + " Символ из ASCII-таблицы: " + symbNumber);
-        System.out.println("Код символа: " + decAnd + " Символ из ASCII-таблицы: " + symbAnd);
-        System.out.println("Код символа: " + decSobaka + " Символ из ASCII-таблицы: " + symbSobaka);
-        System.out.println("Код символа: " + decCaret + " Символ из ASCII-таблицы: " + symbCaret);
-        System.out.println("Код символа: " + decUnderscore + " Символ из ASCII-таблицы: " + symbUnderscore);
+        char meaningNumber = '#';
+        char meaningAnd = '&';
+        char meaningSobaka = '@';
+        char meaningCaret = '^';
+        char meaningUnderscore = '_';
+        System.out.println("Код символа: " + decNumber + " Символ из ASCII-таблицы: " + (int)meaningNumber);
+        System.out.println("Код символа: " + decAnd + " Символ из ASCII-таблицы: " + (int)meaningAnd);
+        System.out.println("Код символа: " + decSobaka + " Символ из ASCII-таблицы: " + (int)meaningSobaka);
+        System.out.println("Код символа: " + decCaret + " Символ из ASCII-таблицы: " + (int)meaningCaret);
+        System.out.println("Код символа: " + decUnderscore + " Символ из ASCII-таблицы: " + (int)meaningUnderscore);
 
         System.out.println("\nЗадача 7. Отображение количества сотен, десятков и единиц числа.\n");
-        int chislo = 123;
-        System.out.println("Число: " + chislo + " содержит:");
-        int sotni = chislo / 100;
-        System.out.println(sotni + " сотен" );
-        int desyatki = chislo % 100 / 10;
-        System.out.println(desyatki + " десятков" );
-        int edinici = chislo % 10;
-        System.out.println(edinici + " единиц" );
+        int originalNumber = 123;
+        System.out.println("Число: " + originalNumber + " содержит:");
+        int hundredNumber = originalNumber / 100;
+        System.out.println(hundredNumbers + " сотен" );
+        int tenNumber = originalNumber % 100 / 10;
+        System.out.println(tenNumber + " десятков" );
+        int oneNumber = originalNumber % 10;
+        System.out.println(oneNumber + " единиц" );
 
         System.out.println("\nЗадача 8. Вывод на консоль ASCII-арт Дюка.\n");
         char slash = '/';
