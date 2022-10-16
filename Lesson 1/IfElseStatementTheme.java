@@ -103,45 +103,36 @@ public class IfElseStatementTheme {
             System.out.println("Общая сумма с %: " + (deposit + accrual));
         }
 
-        /*System.out.println("\nЗадача 7. Определение оценки по предметам.\n");
+        System.out.println("\nЗадача 7. Определение оценки по предметам.\n");
         int offsetHistory = 59;
         int offsetProgramming = 91;
-        int snumoreHistory = xHistory;
-        int snumoreProgramming = y1;
+        Integer scoreHistory = null;
+        Integer scoreProgramming = null;
         String alertHistory = " по истории";
         String alertProgramming = " по программированию";
         if (offsetHistory <= 60) {
-            xHistory = 2;
-            //System.out.println(snumoreHistory + alertHistory);
+            scoreHistory = 2;
         } else if(offsetHistory > 60 & offsetHistory <= 73) {
-            xHistory = 3;
-            //System.out.println(snumoreHistory + alertHistory);
+            scoreHistory = 3;
         } else if(offsetHistory > 73 & offsetHistory <= 91) {
-            xHistory = 4;
-            //System.out.println(snumoreHistory + alertHistory);
+            scoreHistory = 4;
         } else if(offsetHistory > 91) {
-            xHistory = 5;
-            //System.out.println(snumoreHistory + alertHistory);
+            scoreHistory = 5;
         }
         if(offsetProgramming <= 60) {
-            retutn snumoreProgramming = 2;
-            //System.out.println(snumoreProgramming + alertProgramming);
+            scoreProgramming = 2;
         } else if(offsetProgramming > 60 & offsetProgramming <= 73) {
-            return snumoreProgramming = 3;
-            //System.out.println(snumoreProgramming + alertProgramming);
+            scoreProgramming = 3;
         } else if(offsetProgramming > 73 & offsetProgramming <= 91) {
-            return snumoreProgramming = 4;
-            //System.out.println(snumoreProgramming + alertProgramming);
+            scoreProgramming = 4;
         } else if(offsetProgramming > 91) {
-            return snumoreProgramming = 5;
-            //System.out.println(snumoreProgramming + alertProgramming);
+            scoreProgramming = 5;
         }
-        System.out.println("" + snumoreHistory);
-        //int averageMark = (snumoreHistory + snumoreProgramming) / 2;
-        //System.out.println("Средняя: " + averageMark);
+        System.out.println(scoreHistory + " по истории");
+        System.out.println(scoreProgramming + " по программированию");
+        System.out.println("Средний балл оценок по предметам: " 
+                + ((scoreHistory + scoreProgramming) / 2));
         System.out.println("Средний % по предметам: " + ((offsetHistory + offsetProgramming) / 2));
-*/
-
 
 
         }
