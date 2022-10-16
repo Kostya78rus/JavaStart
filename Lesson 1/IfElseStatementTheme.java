@@ -134,6 +134,16 @@ public class IfElseStatementTheme {
                 + ((scoreHistory + scoreProgramming) / 2));
         System.out.println("Средний % по предметам: " + ((offsetHistory + offsetProgramming) / 2));
 
+        System.out.println("\nЗадача 8. Расчет прибыли.\n");
+        int rent = 5_000;
+        int sale = 13_000;
+        int costPrice = 1_000;
+        int annualProfit = sale - costPrice - rent;
+        if(annualProfit > 0) {
+            System.out.println("прибыль за год: +" + annualProfit);
+        } else {
+            System.out.println("прибыль за год: " + annualProfit);
+        }
 
         }
 }
