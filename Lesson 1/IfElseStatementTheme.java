@@ -137,8 +137,8 @@ public class IfElseStatementTheme {
         System.out.println("\nЗадача 8. Расчет прибыли.\n");
         int rent = 5_000;
         int sale = 13_000;
-        int costPrice = 1_000;
-        int annualProfit = sale - costPrice - rent;
+        int costPrice = 9_000;
+        int annualProfit = (sale - costPrice - rent) * 12;
         if(annualProfit > 0) {
             System.out.println("прибыль за год: +" + annualProfit);
         } else {
