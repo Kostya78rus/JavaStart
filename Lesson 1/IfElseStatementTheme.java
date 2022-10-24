@@ -40,7 +40,7 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\nЗадача 3. Работа с числом.");
-        int num = -15;
+        /*int num = -15;
         if (num == 0) {
             System.out.println("Число равно 0");
         } else if (num > 0) {
@@ -53,7 +53,21 @@ public class IfElseStatementTheme {
                    System.out.println("Число: " + num + " отрицательное, чётное");
                } else {
                    System.out.println("Число: " + num + " отрицательное, нечётное");
-               }
+               }*/
+        int srcNum = 0;
+        System.out.println("Исходное число: " + srcNum);
+        if (srcNum != 0) {
+            if (srcNum % 2 == 0) {
+                System.out.println("Нечётное число");
+            } else {
+                System.out.println("Чётное число");
+            }
+            if (srcNum > 0) {
+                System.out.println("Положительное число");
+            } else {
+                System.out.println("Отрицательное число");
+            }
+        }
 
         System.out.println("\nЗадача 4. Поиск одинаковых цифр в числах.");
         int x = 123;
@@ -135,39 +149,39 @@ public class IfElseStatementTheme {
 
         System.out.println("\nЗадача 9. Подсчет количества банкнот.");
         int takeOff = 567;
-        int freeNominal100 = 4;
-        int freeNominal10 = 200;
-        int freeNominal1= 50;
-        int convert100 = takeOff / 100;
-        int convert10 = takeOff % 100 / 10;
-        int remains100 = 0;
-        int remains10 = 0 * 10;
-        int total100 = 0;
-        int total10 = 0;
-        int total1 = 0;
-        if (takeOff > (freeNominal100 * 100 + freeNominal10 * 10 + freeNominal1)) {
+        int numAvailable100 = 4;
+        int numAvailable10 = 200;
+        int numAvailable1= 50;
+        int numRequired100 = takeOff / 100;
+        int numRequired10 = takeOff % 100 / 10;
+        int numActual100 = 0;
+        int numActual10 = 0;
+        int numActual1 = 0;
+        if (takeOff > (numAvailable100 * 100 + numAvailable10 * 10 + numAvailable1)) {
             System.out.println("Превышение суммы, которую может выдать");
         } else {
-            if(convert100 <= freeNominal100) {
-                System.out.println("Номинал 100: " + convert100 + " шт.");
-                total100 = convert100;
+            int remains100 = 0;
+            if(numRequired100 <= numAvailable100) {
+                System.out.println("Номинал 100: " + numRequired100 + " шт.");
+                numActual100 = numRequired100;
             } else {
-                System.out.println("Номинал 100: " + freeNominal100 + " шт.");
-                remains100 = convert100 - freeNominal100;
-                total100 = freeNominal100;
+                System.out.println("Номинал 100: " + numAvailable100 + " шт.");
+                remains100 = numRequired100 - numAvailable100;
+                numActual100 = numAvailable100;
             }
-            if ((convert10 + remains100 * 10) <= freeNominal10) {
-                System.out.println("Номинал 10: " + (convert10 + remains100 * 10) + " шт.");
-                total10 = convert10 + remains100 * 10;
+            int remains10 = 0;
+            if ((numRequired10 + remains100 * 10) <= numAvailable10) {
+                System.out.println("Номинал 10: " + (numRequired10 + remains100 * 10) + " шт.");
+                numActual10 = numRequired10 + remains100 * 10;
             } else {
-                System.out.println("Номинал 10: " + freeNominal10 + " шт.");
-                remains10 = (convert10 + remains100 * 10) - freeNominal10;
-                total10 = freeNominal10;
+                System.out.println("Номинал 10: " + numAvailable10 + " шт.");
+                remains10 = (numRequired10 + remains100 * 10) - numAvailable10;
+                numActual10 = numAvailable10;
             }
             System.out.println("Номинал 1: " + (takeOff % 10 + remains10) + " шт.");
-            total1 = takeOff % 10 + remains10;
+            numActual1 = takeOff % 10 + remains10;
         }
-        System.out.println("Исходная сумма: " + (total100 * 100 + total10 * 10 + total1));
+        System.out.println("Исходная сумма: " + (numActual100 * 100 + numActual10 * 10 + numActual1));
 
     }
 }
