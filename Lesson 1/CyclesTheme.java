@@ -1,17 +1,17 @@
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("Задача 1. Подсчет суммы четных и нечетных чисел.");
-        int i = -10;
+        int counter = -10;
         int sumEven = 0;
         int sumOdd = 0;
         do {
-            if (i % 2 == 0) {
-                sumEven += i;
+            if (counter % 2 == 0) {
+                sumEven += counter;
             } else {
-                sumOdd += i;
+                sumOdd += counter;
             }
-        i++;
-        } while (i <= 21);
+            counter++;
+        } while (counter <= 21);
         System.out.println("В промежутке [-10, 21] сумма четных чисел = " + sumEven 
                 + ", а нечетных = " + sumOdd);
 
@@ -19,23 +19,35 @@ public class CyclesTheme {
         int a = 10;
         int b = 5;
         int c = -1;
-        int maxValue = 0;
-        int minValue = 0;
-        if (a > b && a > c) {  // поиск макс числа
-            maxValue = a;
+        int max = a;
+        int min = b;
+        if (b > max) {
+            max = b;
+        }
+        if (c > max) {
+            max = c;
+        }
+        if (a < min) {
+            min = a;
+            }
+        if (c < min) {
+            min = c;
+        }
+        /*if (a > b && a > c) {  // поиск макс числа
+            max = a;
         } else if (b > a && b > c) {
-            maxValue = b;
+            max = b;
         } else if (c > a && c > b) {
-            maxValue = c;
+            max = c;
         }
         if (a < 0 && a < b && a < c) {  // поиск мин числа
-            minValue = a;
+            min = a;
         } else if (b < 0 && b < a && b < c) {
-            minValue = b;
+            min = b;
         } else if (c < 0 && c < a && c < b) {
-            minValue = c;
-        }
-        for (i = maxValue; i >= minValue; i--) {
+            min = c;
+        }*/
+        for (int i = max - 1; i > min; i--) {
             System.out.print(i + " ");
         }
 
@@ -45,43 +57,45 @@ public class CyclesTheme {
         System.out.print("Исходное число в обратном порядке: ");
         while (num > 0) {
             System.out.print(num % 10);
-            numSumm = numSumm + num % 10;
-            num = num / 10;
+            numSumm += num % 10;
+            num /= 10;
         }
-        System.out.print("\nСумма числа цифр: " + numSumm);
+        System.out.print("\nСумма всех его цифр: " + numSumm);
 
         System.out.println("\n\nЗадача 4. Вывод чисел на консоль в несколько строк.");
-        for (i = 1; i < 24; i += 2) {
+        for ( int i = 1; i < 24; i += 2) {
             for (int j = 1; j <= 5; j++) {
                 if (i < 24) {
                     System.out.printf("%3d", i);
                 } else {
                     System.out.printf("%3d", 0);
                 }
-            i += 2;
-            }
-        i -= 2;
-        System.out.println();
+                i += 2;
+                }
+                i -= 2;
+                System.out.println();
         }
 
         System.out.println("\nЗадача 5. Проверка количества единиц на четность.");
-        int scr_Num = 3141591;
-        int scrNum = scr_Num;
-        int sumOne = 0;
-        while (scrNum > 0) {
-             if ((scrNum % 10) == 1) {
-                sumOne++;
+        int originalNum = 3111591;
+        int copyScrNum = originalNum;
+        int countOne = 0;
+        while (copyScrNum > 0) {
+             if (copyScrNum % 10 > 0) {
+                countOne++;
              }
-            scrNum = scrNum / 10;
+            copyScrNum /= 10;
         }
-        if (sumOne % 2 == 0) {
-                System.out.printf("Число: %d содержит \"%d\" четное количество единиц", scr_Num, sumOne);
+        if (countOne % 2 == 0) {
+            System.out.printf("Число: %d содержит \"%d\" четное количество единиц", 
+                    originalNum, countOne);
             } else {
-                System.out.printf("Число: %d содержит \"%d\" нечетное количество единиц", scr_Num, sumOne);
+                System.out.printf("Число: %d содержит \"%d\" нечетное количество единиц", 
+                        originalNum, countOne);
             }
 
         System.out.println("\n\nЗадача 6. Отображение фигур в консоли.");
-        for (i = 1; i <= 5  ; i++) {
+        for (int i = 1; i <= 5  ; i++) {
             for (int j = 1; j <= 10; j++) {
                 System.out.print("*");
             }
@@ -98,7 +112,7 @@ public class CyclesTheme {
         symbNum--;
         System.out.println();
         }
-        i = 1;
+        int i = 1;
         symbNum = 1;
         do {
             do {
@@ -143,12 +157,12 @@ public class CyclesTheme {
         System.out.println("\n\nЗадача 9. Определение, является ли число счастливым.");
         int luckNum = 143321;
         int luck_Num = luckNum;
-        sumOne = 0;
+        countOne = 0;
         int sumTwo = 0;
         lastNum = 0;
         for (i = 1; i < 4; i++){
             lastNum = luckNum % 10;
-            sumOne = sumOne + lastNum;
+            countOne = countOne + lastNum;
             luckNum = luckNum / 10;
         }
         for (int j = 1; j < 4; j++) {
@@ -156,7 +170,7 @@ public class CyclesTheme {
             sumTwo = sumTwo + lastNum;
             luckNum = luckNum / 10;
         }
-        if (sumOne == sumTwo) {
+        if (countOne == sumTwo) {
             System.out.printf("Число: %d является счастливым.", luck_Num);
         } else {
             System.out.printf("Число: %d не является счастливым.", luck_Num);
