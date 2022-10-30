@@ -29,38 +29,25 @@ public class CyclesTheme {
         }
         if (a < min) {
             min = a;
-            }
+        }
         if (c < min) {
             min = c;
         }
-        /*if (a > b && a > c) {  // поиск макс числа
-            max = a;
-        } else if (b > a && b > c) {
-            max = b;
-        } else if (c > a && c > b) {
-            max = c;
-        }
-        if (a < 0 && a < b && a < c) {  // поиск мин числа
-            min = a;
-        } else if (b < 0 && b < a && b < c) {
-            min = b;
-        } else if (c < 0 && c < a && c < b) {
-            min = c;
-        }*/
         for (int i = max - 1; i > min; i--) {
             System.out.print(i + " ");
         }
 
         System.out.println("\n\nЗадача 3. Вывод реверсивного числа и суммы его цифр.");
         int num = 1234;
-        int numSumm = 0;
+        int sumDigits = 0;
         System.out.print("Исходное число в обратном порядке: ");
         while (num > 0) {
-            System.out.print(num % 10);
-            numSumm += num % 10;
+            int lastDigit = num % 10;
+            System.out.print(lastDigit);
+            sumDigits += lastDigit;
             num /= 10;
         }
-        System.out.print("\nСумма всех его цифр: " + numSumm);
+        System.out.print("\nСумма всех его цифр: " + sumDigits);
 
         System.out.println("\n\nЗадача 4. Вывод чисел на консоль в несколько строк.");
         for ( int i = 1; i < 24; i += 2) {
@@ -71,27 +58,31 @@ public class CyclesTheme {
                     System.out.printf("%3d", 0);
                 }
                 i += 2;
-                }
-                i -= 2;
-                System.out.println();
+            }
+            i -= 2;
+            System.out.println();
         }
 
         System.out.println("\nЗадача 5. Проверка количества единиц на четность.");
-        int originalNum = 3111591;
-        int copyScrNum = originalNum;
-        int countOne = 0;
-        while (copyScrNum > 0) {
-             if (copyScrNum % 10 > 0) {
-                countOne++;
-             }
-            copyScrNum /= 10;
+        int num5 = 3451591;
+        int copyNum5 = num5;
+        int countOnes = 0;
+        while (copyNum5 > 0) {
+            if (copyNum5 % 10 == 1) {   // Если последний разряд равен 1, то мы его учитываем (было изначально так сделано, не могу понять что не верно. )
+                                        // Добавил проверку в else, он все цифры из разрядов учитывает и берёт только 1
+                System.out.println(copyNum5 % 10);
+                countOnes++;            // И увеличиваем счётчик разрядов на 1
+            } else {    // доп проверка
+                System.out.println("не учтено: " + copyNum5 % 10); // доп вывод
+            }
+            copyNum5 /= 10;
         }
-        if (countOne % 2 == 0) {
+        if (countOnes % 2 == 0) {
             System.out.printf("Число: %d содержит \"%d\" четное количество единиц", 
-                    originalNum, countOne);
+                    num5, countOnes);
             } else {
                 System.out.printf("Число: %d содержит \"%d\" нечетное количество единиц", 
-                        originalNum, countOne);
+                        num5, countOnes);
             }
 
         System.out.println("\n\nЗадача 6. Отображение фигур в консоли.");
@@ -99,7 +90,7 @@ public class CyclesTheme {
             for (int j = 1; j <= 10; j++) {
                 System.out.print("*");
             }
-        System.out.println();
+            System.out.println();
         }
         int symbNum = 5;
         int symbNum1 = 0;
@@ -108,9 +99,9 @@ public class CyclesTheme {
                 System.out.print("#");
                 symbNum1++;
             }
-        symbNum1 = 0;
-        symbNum--;
-        System.out.println();
+            symbNum1 = 0;
+            symbNum--;
+            System.out.println();
         }
         int i = 1;
         symbNum = 1;
@@ -119,9 +110,9 @@ public class CyclesTheme {
                 System.out.print("$");
                 symbNum++;
             } while (symbNum <= i);
-        symbNum = 1;
-        i++;
-        System.out.println();
+            symbNum = 1;
+            i++;
+            System.out.println();
         } while (i <= 3);
         do {
             System.out.print("$");
@@ -157,12 +148,12 @@ public class CyclesTheme {
         System.out.println("\n\nЗадача 9. Определение, является ли число счастливым.");
         int luckNum = 143321;
         int luck_Num = luckNum;
-        countOne = 0;
+        countOnes = 0;
         int sumTwo = 0;
         lastNum = 0;
         for (i = 1; i < 4; i++){
             lastNum = luckNum % 10;
-            countOne = countOne + lastNum;
+            countOnes = countOnes + lastNum;
             luckNum = luckNum / 10;
         }
         for (int j = 1; j < 4; j++) {
@@ -170,7 +161,7 @@ public class CyclesTheme {
             sumTwo = sumTwo + lastNum;
             luckNum = luckNum / 10;
         }
-        if (countOne == sumTwo) {
+        if (countOnes == sumTwo) {
             System.out.printf("Число: %d является счастливым.", luck_Num);
         } else {
             System.out.printf("Число: %d не является счастливым.", luck_Num);
