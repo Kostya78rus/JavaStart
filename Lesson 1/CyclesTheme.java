@@ -65,19 +65,18 @@ public class CyclesTheme {
 
         System.out.println("\nЗадача 5. Проверка количества единиц на четность.");
         int num5 = 3451591;
-        int copyNum5 = num5;
+        int copyLuckNum5 = num5;
         int countOnes = 0;
-        while (copyNum5 > 0) {
-            if (copyNum5 % 10 == 1) {
+        while (copyLuckNum5 > 0) {
+            if (copyLuckNum5 % 10 == 1) {
                 countOnes++;
             }
-        copyNum5 /= 10;
+            copyLuckNum5 /= 10;
         }
         if (countOnes % 2 == 0) {
             System.out.printf("Число: %d содержит четное количество единиц (%d)" ,num5, countOnes);
         } else {
-            System.out.printf("Число: %d содержит нечетное количество единиц (%d)", 
-                        num5, countOnes);
+            System.out.printf("Число: %d содержит нечетное количество единиц (%d)",num5, countOnes);
         }
 
         System.out.println("\n\nЗадача 6. Отображение фигур в консоли.");
@@ -87,7 +86,7 @@ public class CyclesTheme {
             }
             System.out.println();
         }
-        System.out.println();
+
         int symbNum = 5; // треугольник 1
         int strNum = 0;
         while (symbNum > 0) {
@@ -99,24 +98,21 @@ public class CyclesTheme {
             symbNum--;
             System.out.println();
         }
-        System.out.println();
-        int endString = 1; // Треугольник 2
-        symbNum = 1;
+
+        int row = 0; // Треугольник 2
+        int count = 0;
         do {
-            if (symbNum <= endString) {
-                System.out.print("$");
-                symbNum++;
+            int elements = 0;
+            do {
+               System.out.print("$");
+            } while (++elements <= row);
+            if (++count <= 2) {
+                row++;
             } else {
-                symbNum = 1;
-                endString++;
-                System.out.println();
+                row--;
             }
-        } while (endString <= 3);
-        do {
-            System.out.print("$");
-            symbNum++;
-        } while (symbNum < 3);
-        System.out.println("\n$");
+            System.out.println();
+        } while (row >= 0);
 
         System.out.println("\nЗадача 7. Отображение ASCII-символов.");
         System.out.println("DEC CHAR");
@@ -142,25 +138,24 @@ public class CyclesTheme {
         }
 
         System.out.println("\n\nЗадача 9. Определение, является ли число счастливым.");
-        int luckNum = 143321;
-        int copyNum = luckNum;
+        int luckNum = 133321;
+        int copyLuckNum = luckNum;
         countOnes = 0;
         int sumTwo = 0;
         int digitNum = 0;
-        for (int i = 1; i < 4; i++){
+        for (int i = 1; i < 7; i++){
             digitNum = luckNum % 10;
-            countOnes += digitNum;
-            luckNum /= 10;
-        }
-        for (int j = 1; j < 4; j++) {
-            digitNum = luckNum % 10;
-            sumTwo += digitNum;
+            if (i < 4) {
+                countOnes += digitNum;
+            } else {
+                sumTwo += digitNum;
+            }
             luckNum /= 10;
         }
         if (countOnes == sumTwo) {
-            System.out.printf("Число: %d является счастливым.", copyNum);
+            System.out.printf("Число: %d является счастливым.", copyLuckNum);
         } else {
-            System.out.printf("Число: %d не является счастливым.", copyNum);
+            System.out.printf("Число: %d не является счастливым.", copyLuckNum);
         }
 
         System.out.println("\n\nЗадача 10. Вывод таблицы умножения Пифагора.");
@@ -171,10 +166,8 @@ public class CyclesTheme {
             System.out.printf("%2d | ", i);
             for (int j = 2; j < 10; j++) {
                 System.out.printf("%2d ", i * j);
-                }
+            }
             System.out.println();
         }
-
-
     }
 }
